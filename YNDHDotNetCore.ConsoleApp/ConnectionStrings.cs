@@ -14,7 +14,8 @@ namespace YNDHDotNetCore.ConsoleApp
             DataSource = "DESKTOP-V9J631O\\YENANDAHTET",
             InitialCatalog = "YNDHDotNetCore",
             UserID = "sa",
-            Password = "sa@123"
+            Password = "sa@123",
+            TrustServerCertificate = true,
         };
     }
 }
