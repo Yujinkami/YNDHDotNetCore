@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Data;
 using System.Data.SqlClient;
-using YNDHDotNetCore.ConsoleApp;
+using YNDHDotNetCore.ConsoleApp.EFCoreExamples;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello, World!");

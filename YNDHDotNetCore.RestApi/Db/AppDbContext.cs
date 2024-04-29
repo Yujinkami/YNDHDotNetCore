@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YNDHDotNetCore.RestApi.Models;
 
-namespace YNDHDotNetCore.ConsoleApp
+namespace YNDHDotNetCore.RestApi.Db
 {
     internal class AppDbContext : DbContext
     {

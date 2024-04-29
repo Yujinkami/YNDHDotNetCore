@@ -7,8 +7,10 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using YNDHDotNetCore.ConsoleApp.Dtos;
+using YNDHDotNetCore.ConsoleApp.Services;
 
-namespace YNDHDotNetCore.ConsoleApp
+namespace YNDHDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -81,7 +83,7 @@ namespace YNDHDotNetCore.ConsoleApp
             string message = result > 0 ? "Saving Successful" : "Saving Failed";
             Console.WriteLine(message);
         }
-        private void Update(int id, string title, string author, string content) 
+        private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {

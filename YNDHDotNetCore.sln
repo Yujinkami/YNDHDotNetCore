@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		YNDHDotNetCore.sql = YNDHDotNetCore.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YNDHDotNetCore.RestApi", "YNDHDotNetCore.RestApi\YNDHDotNetCore.RestApi.csproj", "{47290D6B-23FA-4671-AD90-A6543C9A39D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A61FEF77-4ED2-49BF-A07B-D7D9C973AB75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A61FEF77-4ED2-49BF-A07B-D7D9C973AB75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A61FEF77-4ED2-49BF-A07B-D7D9C973AB75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47290D6B-23FA-4671-AD90-A6543C9A39D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47290D6B-23FA-4671-AD90-A6543C9A39D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47290D6B-23FA-4671-AD90-A6543C9A39D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47290D6B-23FA-4671-AD90-A6543C9A39D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

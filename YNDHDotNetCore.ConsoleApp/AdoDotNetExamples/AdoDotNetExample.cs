@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using System.Collections;
 using System.Reflection.Metadata;
 
-namespace YNDHDotNetCore.ConsoleApp
+namespace YNDHDotNetCore.ConsoleApp.AdoDotNetExamples
 {
-    
+
     internal class AdoDotNetExample
     {
         private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
@@ -23,9 +23,9 @@ namespace YNDHDotNetCore.ConsoleApp
 
 
 
-        public void Read() 
+        public void Read()
         {
-           
+
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
 
             //SqlConnection connection = new SqlConnection("Data Source = DESKTOP-V9J631O\\YENANDAHTET;Initial Catalog = YNDHDotNetCore;User ID = sa;Password = sa@123");
@@ -69,7 +69,7 @@ namespace YNDHDotNetCore.ConsoleApp
             sqlDataAdapter.Fill(dt);
 
             connection.Close();
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found.");
                 return;
@@ -84,7 +84,7 @@ namespace YNDHDotNetCore.ConsoleApp
             Console.WriteLine("----------------------------------------");
         }
 
-        public void Create(string title, string author, string content) 
+        public void Create(string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
