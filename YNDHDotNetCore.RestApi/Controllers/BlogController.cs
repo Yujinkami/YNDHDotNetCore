@@ -44,7 +44,7 @@ namespace YNDHDotNetCore.RestApi.Controllers
             _context.Blogs.Add(blog);
             var result = _context.SaveChanges();
 
-            string message = result > 0 ? "Creating Successful" : "Creating Failed";
+            string message = result > 0 ? "Saving Successful" : "Saving Failed";
             return Ok(message);
         }
 

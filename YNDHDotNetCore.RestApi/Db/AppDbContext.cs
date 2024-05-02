@@ -15,7 +15,7 @@ namespace YNDHDotNetCore.RestApi.Db
         {
             optionsBuilder.UseSqlServer(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         }
-        public DbSet<BlogDto> Blogs { get; set; }
+        public DbSet<BlogModel> Blogs { get; set; }
 
     }
 }
