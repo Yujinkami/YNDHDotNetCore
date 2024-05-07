@@ -69,8 +69,7 @@ namespace YNDHDotNetCore.RestApi.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult Patch(int id, BlogModel blog
-            )
+        public IActionResult Patch(int id, BlogModel blog)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item == null)

@@ -5,21 +5,25 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using YNDHDotNetCore.RestApi.Models;
+using YNDHDotNetCore.Shared;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace YNDHDotNetCore.RestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BlogDapperController : ControllerBase
+    public class BlogDapper2Controller : ControllerBase
     {
+
+        private readonly DapperService _dapperService = new DapperService(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
         //Read
         [HttpGet]
         public IActionResult GetBlogs()
         {
             string query = "select * from tbl_blog";
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            List<BlogModel> lst = db.Query<BlogModel>(query).ToList();
+            //using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            //List<BlogModel> lst = db.Query<BlogModel>(query).ToList();
+            var lst = _dapperService.Query<BlogModel>(query);
             return Ok(lst);
         }
 
@@ -49,8 +53,10 @@ namespace YNDHDotNetCore.RestApi.Controllers
 			,@BlogAuthor
 			,@BlogContent)";
 
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            //using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            //int result = db.Execute(query, blog);
+
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
             return Ok(message);
@@ -71,8 +77,10 @@ namespace YNDHDotNetCore.RestApi.Controllers
       ,[BlogContent] = @BlogContent
  WHERE BlogId = @BlogId";
 
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            //using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            //int result = db.Execute(query, blog);
+
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Updating Successful" : "Updating Failed";
             return Ok(message);
@@ -113,8 +121,10 @@ namespace YNDHDotNetCore.RestApi.Controllers
             SET {conditions}
 WHERE BlogId = @BlogId";
 
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, blog);
+            //using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            //int result = db.Execute(query, blog);
+
+            int result = _dapperService.Execute(query, blog);
 
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";
             return Ok();
@@ -141,8 +151,9 @@ WHERE BlogId = @BlogId";
         private BlogModel? FindById(int id)
         {
             string query = "select * from tbl_blog";
-            using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogModel>(query, new BlogModel { BlogId = id }).FirstOrDefault();
+            //using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
+            //var item = db.Query<BlogModel>(query, new BlogModel { BlogId = id }).FirstOrDefault();
+            var item = _dapperService.QueryFirstOrDefault<BlogModel>(query, new BlogModel { BlogId = id });
             return item;
         }
     }
