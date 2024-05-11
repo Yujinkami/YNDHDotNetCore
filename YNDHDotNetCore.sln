@@ -13,7 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YNDHDotNetCore.RestApi", "YNDHDotNetCore.RestApi\YNDHDotNetCore.RestApi.csproj", "{47290D6B-23FA-4671-AD90-A6543C9A39D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YNDHDotNetCore.Shared", "YNDHDotNetCore.Shared\YNDHDotNetCore.Shared.csproj", "{2F18A85E-02D2-4F73-9913-E14A43DA553A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YNDHDotNetCore.Shared", "YNDHDotNetCore.Shared\YNDHDotNetCore.Shared.csproj", "{2F18A85E-02D2-4F73-9913-E14A43DA553A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YNDHDotNetCore.RestApiWithNLayer", "YNDHDotNetCore.RestApiWithNLayer\YNDHDotNetCore.RestApiWithNLayer.csproj", "{B246832D-BB8B-4F4B-80ED-5965989622E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YNDHDotNetCore.ConsoleAppHttpClient", "YNDHDotNetCore.ConsoleAppHttpClient\YNDHDotNetCore.ConsoleAppHttpClient.csproj", "{BECCC844-D03D-4004-8D05-9BA72A72EA8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{2F18A85E-02D2-4F73-9913-E14A43DA553A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F18A85E-02D2-4F73-9913-E14A43DA553A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F18A85E-02D2-4F73-9913-E14A43DA553A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B246832D-BB8B-4F4B-80ED-5965989622E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B246832D-BB8B-4F4B-80ED-5965989622E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B246832D-BB8B-4F4B-80ED-5965989622E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B246832D-BB8B-4F4B-80ED-5965989622E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECCC844-D03D-4004-8D05-9BA72A72EA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECCC844-D03D-4004-8D05-9BA72A72EA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECCC844-D03D-4004-8D05-9BA72A72EA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECCC844-D03D-4004-8D05-9BA72A72EA8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
