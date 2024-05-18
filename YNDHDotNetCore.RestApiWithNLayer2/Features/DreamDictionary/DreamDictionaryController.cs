@@ -24,8 +24,7 @@ namespace YNDHDotNetCore.RestApiWithNLayer2.Features.DreamDictionary
         [HttpGet("blogid")]
         public async Task<IActionResult> LetterList(int blogid)
         {
-            var model1 = await GetDreamDictionaryAsync();
-            
+            var model1 = await GetDreamDictionaryAsync();            
             return Ok(model1.BlogDetail.TakeWhile(x => x.BlogId == blogid));
         }
 
