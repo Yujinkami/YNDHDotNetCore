@@ -24,7 +24,7 @@ namespace YNDHDotNetCore.Shared
             //{
             //    var lst = db.Query<M>(query).ToList();
             //}
-            var lst = db.Query<M>(query).ToList();
+            var lst = db.Query<M>(query, param).ToList();
             return lst;
         }
 
@@ -39,7 +39,7 @@ namespace YNDHDotNetCore.Shared
             //{
             //    var lst = db.Query<M>(query).ToList();
             //}
-            var item = db.Query<M>(query).FirstOrDefault();
+            var item = db.Query<M>(query, param).FirstOrDefault();
             return item!;
         }
 
