@@ -4,3 +4,7 @@ Scaffold-DbContext "Server=DESKTOP-V9J631O\\YENANDAHTET;Database=YNDHDotNetCore;
 
 API => Application Programing Interface
 XML => Extensible Markup Language
+
+.net framework (1, 4.8.1)
+.net core (1, 3.1)
+.net (5, 9)
