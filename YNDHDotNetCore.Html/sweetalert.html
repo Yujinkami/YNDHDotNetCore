@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweet Alert</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
+    <script>
+        // successMessage("Successfully");
+        errorMessage("Failed");
+
+        function successMessage(message) {
+            Swal.fire({
+                title: "Success!",
+                text: message,
+                icon: "success"
+            });
+        }
+        function errorMessage(message) {
+            Swal.fire({
+                title: "Failed!",
+                text: message,
+                icon: "error"
+            });
+        }
+    </script>
+</body>
+
+</html>

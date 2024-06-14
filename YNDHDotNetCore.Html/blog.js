@@ -50,7 +50,13 @@ function createBlog(title, author, content) {
 
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
-    successMessage("Saving Successful.");
+
+    Notiflix.Loading.standard();
+    setTimeout(() => {
+        Notiflix.Loading.remove();
+        successMessage("Saving Successful.");
+        Notiflix.Notify.success('Complete');
+    }, 1500);
     clearControls();
 }
 
@@ -79,26 +85,48 @@ function updateBlog(id, title, author, content) {
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
 
-    successMessage("Updating Successful.");
+    Notiflix.Loading.standard();
+    setTimeout(() => {
+        Notiflix.Loading.remove();
+        successMessage("Updating Successful.");
+        Notiflix.Notify.success('Complete changing!');
+    }, 1500);
+    // getBlogTable();
 }
 
 function deleteBlog(id) {
-    let result = confirm("Are you sure want to delete?");
-    if (!result) return;
+    Notiflix.Confirm.show(
+        'Confirm Box',
+        'Are you sure to delete this data?',
+        'Yes',
+        'No',
+        function okCb() {
+            Notiflix.Loading.standard();
 
-    let lst = getBLogs();
+            let lst = getBLogs();
 
-    const items = lst.filter(x => x.id === id);
-    if (items.length == 0) {
-        console.log("No data found.");
-        return;
-    }
-    lst = lst.filter(x => x.id !== id);
-    const jsonBlog = JSON.stringify(lst);
-    localStorage.setItem(tblBlog, jsonBlog);
+            const items = lst.filter(x => x.id === id);
+            if (items.length == 0) {
+                console.log("No data found.");
+                return;
+            }
+            lst = lst.filter(x => x.id !== id);
+            const jsonBlog = JSON.stringify(lst);
+            localStorage.setItem(tblBlog, jsonBlog);
 
-    successMessage("Deleting Successful.");
-    getBlogTable();
+            setTimeout(() => {
+                Notiflix.Loading.remove();
+                successMessage("Deleting Successful.");
+                Notiflix.Notify.success('Complete!');
+            }, 1500);
+            getBlogTable();
+        },
+        function cancelCb() {
+            return;
+        },
+        {
+        },
+    );
 }
 
 function uuidv4() {
@@ -133,11 +161,21 @@ $('#btnSave').click(function () {
 })
 
 function successMessage(message) {
-    alert(message);
+    // alert(message);
+    Swal.fire({
+        title: "Success!",
+        text: message,
+        icon: "success"
+    });
 }
 
 function errorMessage(message) {
-    alert(message);
+    // alert(message);
+    Swal.fire({
+        title: "Failed!",
+        text: message,
+        icon: "error"
+    });
 }
 
 function clearControls() {
