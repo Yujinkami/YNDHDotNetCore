@@ -11,17 +11,22 @@ using System.Reflection.Metadata;
 namespace YNDHDotNetCore.ConsoleApp.AdoDotNetExamples
 {
 
-    internal class AdoDotNetExample
+    public class AdoDotNetExample
     {
-        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        //{
+        //    DataSource = "DESKTOP-V9J631O\\YENANDAHTET", //server name
+        //    InitialCatalog = "YNDHDotNetCore", // database name
+        //    UserID = "sa",
+        //    Password = "sa@123"
+        //};
+
+        private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder;
+
+        public AdoDotNetExample(SqlConnectionStringBuilder sqlConnectionStringBuilder)
         {
-            DataSource = "DESKTOP-V9J631O\\YENANDAHTET", //server name
-            InitialCatalog = "YNDHDotNetCore", // database name
-            UserID = "sa",
-            Password = "sa@123"
-        };
-
-
+            _sqlConnectionStringBuilder = sqlConnectionStringBuilder;
+        }
 
         public void Read()
         {

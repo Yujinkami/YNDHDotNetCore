@@ -1,7 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Data;
 using System.Data.SqlClient;
+using YNDHDotNetCore.ConsoleApp.AdoDotNetExamples;
+using YNDHDotNetCore.ConsoleApp.DapperExamples;
 using YNDHDotNetCore.ConsoleApp.EFCoreExamples;
+using YNDHDotNetCore.ConsoleApp.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 Console.WriteLine("Hello, World!");
@@ -59,8 +64,28 @@ Console.WriteLine("Hello, World!");
 //DapperExample dapperExample = new DapperExample();
 //dapperExample.Run();
 
-EFCoreExample eFCoreExample = new EFCoreExample();
-eFCoreExample.Run();
+//EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Run();
 
+var connectionString = ConnectionStrings.SqlConnectionStringBuilder.ConnectionString;
+var sqlConnectionStringBuilder = new SqlConnectionStringBuilder(connectionString);
+
+var serviceProvider = new ServiceCollection()
+    .AddScoped(n => new AdoDotNetExample(sqlConnectionStringBuilder))
+    .AddScoped(n => new DapperExample(sqlConnectionStringBuilder))
+    .AddDbContext<AppDbContext>(opt => 
+ {
+    opt.UseSqlServer(connectionString);
+})
+    .AddScoped<EFCoreExample>()
+    .BuildServiceProvider();
+
+//AppDbContext db = serviceProvider.GetRequiredService<AppDbContext>();
+
+var adoDotNetExample = serviceProvider.GetRequiredService<AdoDotNetExample>();
+adoDotNetExample.Read();
+
+//var dapperExample = serviceProvider.GetRequiredService<DapperExample>();
+//dapperExample.Run();
 
 Console.ReadLine();  
