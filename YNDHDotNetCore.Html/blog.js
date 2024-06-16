@@ -1,5 +1,7 @@
 const tblBlog = "blogs";
 let blogId = null;
+
+// testConfirmMessage();
 getBlogTable();
 
 
@@ -91,7 +93,8 @@ function updateBlog(id, title, author, content) {
         successMessage("Updating Successful.");
         Notiflix.Notify.success('Complete changing!');
     }, 1500);
-    // getBlogTable();
+    clearControls();
+    getBlogTable();
 }
 
 function deleteBlog(id) {
@@ -114,6 +117,7 @@ function deleteBlog(id) {
             const jsonBlog = JSON.stringify(lst);
             localStorage.setItem(tblBlog, jsonBlog);
 
+            Notiflix.Loading.standard();
             setTimeout(() => {
                 Notiflix.Loading.remove();
                 successMessage("Deleting Successful.");
@@ -126,12 +130,6 @@ function deleteBlog(id) {
         },
         {
         },
-    );
-}
-
-function uuidv4() {
-    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-        (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
     );
 }
 
@@ -159,24 +157,6 @@ $('#btnSave').click(function () {
 
     getBlogTable();
 })
-
-function successMessage(message) {
-    // alert(message);
-    Swal.fire({
-        title: "Success!",
-        text: message,
-        icon: "success"
-    });
-}
-
-function errorMessage(message) {
-    // alert(message);
-    Swal.fire({
-        title: "Failed!",
-        text: message,
-        icon: "error"
-    });
-}
 
 function clearControls() {
     $('#txtTitle').val('');
