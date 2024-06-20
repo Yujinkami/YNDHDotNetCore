@@ -72,7 +72,6 @@ namespace YNDHDotNetCore.RestApi.Controllers
 
             string message = result > 0 ? "Updating Successful" : "Updating Failed";
             return Ok(message);
-            
         }
 
         [HttpPatch("{id}")]
