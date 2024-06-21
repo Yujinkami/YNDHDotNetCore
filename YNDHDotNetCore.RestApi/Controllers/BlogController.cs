@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
-using YNDHDotNetCore.RestApi.Db;
-using YNDHDotNetCore.RestApi.Models;
+using YNDHDotNetCore.MvcApp.Db;
+using YNDHDotNetCore.MvcApp.Models;
 
-namespace YNDHDotNetCore.RestApi.Controllers
+namespace YNDHDotNetCore.MvcApp.Controllers
 {
     //https://localhost:3000 => domain url
     //api/blog => endpoint

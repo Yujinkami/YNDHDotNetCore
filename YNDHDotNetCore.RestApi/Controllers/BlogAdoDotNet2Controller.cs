@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Metadata;
-using YNDHDotNetCore.RestApi.Models;
+using YNDHDotNetCore.MvcApp.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using YNDHDotNetCore.Shared;
 
-namespace YNDHDotNetCore.RestApi.Controllers
+namespace YNDHDotNetCore.MvcApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

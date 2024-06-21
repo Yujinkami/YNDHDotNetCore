@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using YNDHDotNetCore.RestApi.Models;
+using YNDHDotNetCore.MvcApp.Models;
 using YNDHDotNetCore.Shared;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace YNDHDotNetCore.RestApi.Controllers
+namespace YNDHDotNetCore.MvcApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

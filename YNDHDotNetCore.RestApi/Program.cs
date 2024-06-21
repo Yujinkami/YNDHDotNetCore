@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using YNDHDotNetCore.RestApi.Db;
+using YNDHDotNetCore.MvcApp.Db;
 using YNDHDotNetCore.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +25,7 @@ ServiceLifetime.Transient
 //builder.Services.AddScoped<DapperService>((n => new DapperService(connectionString));
 
 builder.Services.AddScoped(n => new AdoDotNetService(connectionString));
-builder.Services.AddScoped((n => new DapperService(connectionString));
+builder.Services.AddScoped(n => new DapperService(connectionString));
 
 var app = builder.Build();
 
