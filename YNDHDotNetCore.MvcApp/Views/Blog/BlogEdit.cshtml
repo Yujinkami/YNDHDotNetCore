@@ -1,0 +1,21 @@
+﻿@model BlogModel
+<h2>Edit Blog</h2>
+
+<form action="/Blog/Update/@Model.BlogId" method="post">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="BlogTitle" placeholder="Title..." value="@Model.BlogTitle">
+        <label>Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="BlogAuthor" placeholder="Author..." value="@Model.BlogAuthor">
+        <label>Author</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="BlogContent" placeholder="Content..." value="@Model.BlogContent">
+        <label>Content</label>
+    </div>
+
+    <a href="/Blog" class="btn btn-dark">Back</a>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+
